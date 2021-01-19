@@ -9,6 +9,17 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueI18n from 'vue-i18n'
+Vue.use(VueI18n) // 通过插件的形式挂载
+
+const i18n = new VueI18n({
+  locale: 'en-US', // 语言标识
+  messages: {
+    'en-US': require('./assets/common/lang/en'),// 英文语言包
+    'zh-CN': require('./assets/common/lang/zh'), // 中文语言包
+    
+  }
+})
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -117,6 +128,7 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
+  i18n,
   store,
   render: h => h(App)
 }).$mount('#app')
