@@ -13,7 +13,7 @@
         <p>
           <i class="el-icon-s-order"></i>
         </p>
-        <p>确认订单</p>
+        <p>Comfirm Order</p>
         <router-link to></router-link>
       </div>
     </div>
@@ -23,7 +23,7 @@
     <div class="content">
       <!-- 选择地址 -->
       <div class="section-address">
-        <p class="title">收货地址</p>
+        <p class="title">Receipt Address</p>
         <div class="address-body">
           <ul>
             <li
@@ -37,7 +37,7 @@
             </li>
             <li class="add-address">
               <i class="el-icon-circle-plus-outline"></i>
-              <p>添加新地址</p>
+              <p>Add Address</p>
             </li>
           </ul>
         </div>
@@ -46,15 +46,15 @@
 
       <!-- 商品及优惠券 -->
       <div class="section-goods">
-        <p class="title">商品及优惠券</p>
+        <p class="title">Goods&Coupon</p>
         <div class="goods-list">
           <ul>
             <li v-for="item in getCheckGoods" :key="item.id">
               <img :src="$target + item.productImg" />
               <span class="pro-name">{{item.productName}}</span>
-              <span class="pro-price">{{item.price}}元 x {{item.num}}</span>
+              <span class="pro-price">{{item.price}}$ x {{item.num}}</span>
               <span class="pro-status"></span>
-              <span class="pro-total">{{item.price * item.num}}元</span>
+              <span class="pro-total">${{item.price * item.num}}</span>
             </li>
           </ul>
         </div>
@@ -63,17 +63,17 @@
 
       <!-- 配送方式 -->
       <div class="section-shipment">
-        <p class="title">配送方式</p>
-        <p class="shipment">包邮</p>
+        <p class="title">Delivery</p>
+        <p class="shipment">Free shipping</p>
       </div>
       <!-- 配送方式END -->
 
       <!-- 发票 -->
       <div class="section-invoice">
-        <p class="title">发票</p>
-        <p class="invoice">电子发票</p>
-        <p class="invoice">个人</p>
-        <p class="invoice">商品明细</p>
+        <p class="title">Invoice</p>
+        <p class="invoice">Electronic Invoice</p>
+        <p class="invoice">Personal</p>
+        <p class="invoice">Commodity Details</p>
       </div>
       <!-- 发票END -->
 
@@ -82,29 +82,29 @@
         <div class="money-box">
           <ul>
             <li>
-              <span class="title">商品件数：</span>
-              <span class="value">{{getCheckNum}}件</span>
+              <span class="title">Number of products:</span>
+              <span class="value">{{getCheckNum}}</span>
             </li>
             <li>
-              <span class="title">商品总价：</span>
-              <span class="value">{{getTotalPrice}}元</span>
+              <span class="title">Total commodity price:</span>
+              <span class="value">${{getTotalPrice}}</span>
             </li>
             <li>
-              <span class="title">活动优惠：</span>
-              <span class="value">-0元</span>
+              <span class="title">Activity offers:</span>
+              <span class="value">-$0</span>
             </li>
             <li>
-              <span class="title">优惠券抵扣：</span>
-              <span class="value">-0元</span>
+              <span class="title">Coupon deduction:</span>
+              <span class="value">-$0</span>
             </li>
             <li>
-              <span class="title">运费：</span>
-              <span class="value">0元</span>
+              <span class="title">Freight:</span>
+              <span class="value">$0</span>
             </li>
             <li class="total">
-              <span class="title">应付总额：</span>
+              <span class="title">Total payable:Total payable:</span>
               <span class="value">
-                <span class="total-price">{{getTotalPrice}}</span>元
+                <span class="total-price">${{getTotalPrice}}</span>
               </span>
             </li>
           </ul>
@@ -115,8 +115,8 @@
       <!-- 结算导航 -->
       <div class="section-bar">
         <div class="btn">
-          <router-link to="/shoppingCart" class="btn-base btn-return">返回购物车</router-link>
-          <a href="javascript:void(0);" @click="addOrder" class="btn-base btn-primary">结算</a>
+          <router-link to="/shoppingCart" class="btn-base btn-return">Return to shopping cart</router-link>
+          <a href="javascript:void(0);" @click="addOrder" class="btn-base btn-primary">Settlement</a>
         </div>
       </div>
       <!-- 结算导航END -->
@@ -137,9 +137,9 @@ export default {
       address: [
         {
           id: 1,
-          name: "吴同学",
+          name: "Tyrion",
           phone: "13333634203",
-          address: "湖北省 黄冈市 红安县"
+          address: "广东省 深圳市 宝安区"
         }
       ]
     };
@@ -147,7 +147,7 @@ export default {
   created() {
     // 如果没有勾选购物车商品直接进入确认订单页面,提示信息并返回购物车
     if (this.getCheckNum < 1) {
-      this.notifyError("请勾选商品后再结算");
+      this.notifyError("Please check the product before settlement");
       this.$router.push({ path: "/shoppingCart" });
     }
   },

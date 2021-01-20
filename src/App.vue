@@ -32,7 +32,7 @@
               <router-link to="/order">My Order</router-link>
             </li>
             <li>
-              <router-link to="/collect">My Love</router-link>
+              <router-link to="/collect">My Favorite</router-link>
             </li>
             <li :class="getNum > 0 ? 'shopCart-full' : 'shopCart'">
               <router-link to="/shoppingCart">
@@ -92,9 +92,9 @@
           <div class="ng-promise-box">
             <div class="ng-promise">
               <p class="text">
-                <a class="icon1" href="javascript:;">7天无理由退换货</a>
-                <a class="icon2" href="javascript:;">满99元全场免邮</a>
-                <a class="icon3" style="margin-right: 0" href="javascript:;">100%品质保证</a>
+                <a class="icon1" href="javascript:;">7 days no reason to return</a>
+                <a class="icon2" href="javascript:;">Free shipping for orders over $99</a>
+                <a class="icon3" style="margin-right: 0" href="javascript:;">100% quality assurance</a>
               </p>
             </div>
           </div>
@@ -113,7 +113,7 @@
               <span>|</span>
               <!-- <router-link to="/about">关于我们</router-link> -->
             </p>
-            <p class="coty">商城版权所有 &copy; 2012-2021</p>
+            <p class="coty">ChinaMarket &copy; 2012-2021</p>
           </div>
         </div>
       </el-footer>

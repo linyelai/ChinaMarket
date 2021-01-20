@@ -12,7 +12,7 @@
       <div class="order-header-content">
         <p>
           <i class="el-icon-s-order" style="font-size: 30px;color: #ff6700;"></i>
-          我的订单
+          My Order
         </p>
       </div>
     </div>
@@ -24,15 +24,15 @@
         <ul>
           <!-- 我的订单表头 -->
           <li class="order-info">
-            <div class="order-id">订单编号: {{item[0].orderId}}</div>
-            <div class="order-time">订单时间: {{item[0].orderTime | dateFormat}}</div>
+            <div class="order-id">Order NO: {{item[0].orderId}}</div>
+            <div class="order-time">Order Time: {{item[0].orderTime | dateFormat}}</div>
           </li>
           <li class="header">
             <div class="pro-img"></div>
-            <div class="pro-name">商品名称</div>
-            <div class="pro-price">单价</div>
-            <div class="pro-num">数量</div>
-            <div class="pro-total">小计</div>
+            <div class="pro-name">Goods Name</div>
+            <div class="pro-price">Price</div>
+            <div class="pro-num">Number</div>
+            <div class="pro-total">Total</div>
           </li>
           <!-- 我的订单表头END -->
 
@@ -48,22 +48,22 @@
                 :to="{ path: '/goods/details', query: {productID:product.productId} }"
               >{{product.productName}}</router-link>
             </div>
-            <div class="pro-price">{{product.productPrice}}元</div>
+            <div class="pro-price">${{product.productPrice}}</div>
             <div class="pro-num">{{product.productNum}}</div>
-            <div class="pro-total pro-total-in">{{product.productPrice*product.productNum}}元</div>
+            <div class="pro-total pro-total-in">${{product.productPrice*product.productNum}}</div>
           </li>
         </ul>
         <div class="order-bar">
           <div class="order-bar-left">
             <span class="order-total">
               共
-              <span class="order-total-num">{{total[index].totalNum}}</span> 件商品
+              <span class="order-total-num">{{total[index].totalNum}}</span> 
             </span>
           </div>
           <div class="order-bar-right">
             <span>
-              <span class="total-price-title">合计：</span>
-              <span class="total-price">{{total[index].totalPrice}}元</span>
+              <span class="total-price-title">Total：</span>
+              <span class="total-price">${{total[index].totalPrice}}</span>
             </span>
           </div>
           <!-- 订单列表END -->
@@ -76,8 +76,8 @@
     <!-- 订单为空的时候显示的内容 -->
     <div v-else class="order-empty">
       <div class="empty">
-        <h2>您的订单还是空的！</h2>
-        <p>快去购物吧！</p>
+        <h2>Your order is still empty！</h2>
+        <p>Go shopping！</p>
       </div>
     </div>
     <!-- 订单为空的时候显示的内容END -->
