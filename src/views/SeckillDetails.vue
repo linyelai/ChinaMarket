@@ -14,13 +14,13 @@
         <div class="list">
           <ul>
             <li>
-              <router-link to>概述</router-link>
+              <router-link to>Overview</router-link>
             </li>
             <li>
-              <router-link to>参数</router-link>
+              <router-link to>Parameter</router-link>
             </li>
             <li>
-              <router-link to>用户评价</router-link>
+              <router-link to>User Evaluation</router-link>
             </li>
           </ul>
         </div>
@@ -51,48 +51,48 @@
       <div class="content">
         <h1 class="name">{{productDetails.productName}}</h1>
         <!-- <p class="intro">{{productDetails.productIntro}}</p> -->
-        <p class="store">开始时间: <span>{{productDetails.startTime | dateFormat}}</span></p>
-        <p class="store">结束时间: <span>{{productDetails.endTime | dateFormat}}</span></p>
+        <p class="store">Start Time: <span>{{productDetails.startTime | dateFormat}}</span></p>
+        <p class="store">End Time: <span>{{productDetails.endTime | dateFormat}}</span></p>
         <div class="price">
-          <span>{{productDetails.seckillPrice}}元</span>
+          <span>${{productDetails.seckillPrice}}</span>
           <span
             v-show="productDetails.productPrice != productDetails.seckillPrice"
             class="del"
-          >{{productDetails.productPrice}}元</span>
+          >${{productDetails.productPrice}}</span>
         </div>
         <div class="pro-list">
           <span class="pro-name">{{productDetails.productName}}</span>
           <span class="pro-price">
-            <span>{{productDetails.seckillPrice}}元</span>
+            <span>${{productDetails.seckillPrice}}</span>
             <span
               v-show="productDetails.productPrice != productDetails.seckillPrice"
               class="pro-del"
-            >{{productDetails.productPrice}}元</span>
+            >${{productDetails.productPrice}}</span>
           </span>
-          <p class="price-sum">秒杀价 : {{productDetails.seckillPrice}}元</p>
-          <p class="price-sum">倒计时 : {{testTime}}秒</p>
+          <p class="price-sum">SecKill Price : ${{productDetails.seckillPrice}}</p>
+          <p class="price-sum"> Countdown: {{testTime}}seconds</p>
 
         </div>
         <!-- 内容区底部按钮 -->
         <div class="button">
           <!-- <el-button class="shop-cart" :disabled="dis" @click="addShoppingCart">抢购</el-button> -->
-          <el-button class="shop-cart" :disabled="dis" @click="addSeckill">抢购</el-button>
-          <el-button class="like" @click="addCollect">喜欢</el-button>
+          <el-button class="shop-cart" :disabled="dis" @click="addSeckill">Snap up</el-button>
+          <el-button class="like" @click="addCollect">Like</el-button>
         </div>
         <!-- 内容区底部按钮END -->
         <div class="pro-policy">
           <ul>
             <li>
-              <i class="el-icon-circle-check"></i> 小米自营
+              <i class="el-icon-circle-check"></i> Self-employed
             </li>
             <li>
-              <i class="el-icon-circle-check"></i> 小米发货
+              <i class="el-icon-circle-check"></i> Ship
             </li>
             <li>
-              <i class="el-icon-circle-check"></i> 7天无理由退货
+              <i class="el-icon-circle-check"></i> 7 days no reason to return
             </li>
             <li>
-              <i class="el-icon-circle-check"></i> 7天价格保护
+              <i class="el-icon-circle-check"></i> 7 days price protection
             </li>
           </ul>
         </div>

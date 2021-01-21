@@ -98,11 +98,6 @@
               </p>
             </div>
           </div>
-          <div class="github">
-            <a href="https://github.com/ZeroWdd" target="_blank">
-              <div class="github-but"></div>
-            </a>
-          </div>
           <div class="mod_help">
             <p>
               <router-link to="/">Home</router-link>

@@ -10,8 +10,8 @@
     <!-- 面包屑 -->
     <div class="breadcrumb">
       <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item to="/">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>秒杀</el-breadcrumb-item>
+        <el-breadcrumb-item to="/">Home</el-breadcrumb-item>
+        <el-breadcrumb-item>SecKill</el-breadcrumb-item>
         <!-- <el-breadcrumb-item v-if="search">搜索</el-breadcrumb-item>
         <el-breadcrumb-item v-else>分类</el-breadcrumb-item> -->
         <!-- <el-breadcrumb-item v-if="search">{{search}}</el-breadcrumb-item> -->
@@ -22,7 +22,7 @@
     <!-- 分类标签 -->
     <div class="nav">
       <div class="product-nav">
-        <div class="title">时间</div>
+        <div class="title">Date</div>
         <el-tabs v-model="activeName" type="card">
           <el-tab-pane
             v-for="item in timeList"
@@ -39,7 +39,7 @@
     <div class="main">
       <div class="list">
         <MySeckillList :list="product" v-if="product.length>0"></MySeckillList>
-        <div v-else class="none-product">抱歉没有找到相关的商品，请看看其他的商品</div>
+        <div v-else class="none-product">Sorry no related products were found, please look at other products</div>
       </div>
       <!-- 分页 -->
       <!-- <div class="pagination">
