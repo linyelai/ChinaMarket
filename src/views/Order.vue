@@ -56,7 +56,7 @@
         <div class="order-bar">
           <div class="order-bar-left">
             <span class="order-total">
-              共
+              total
               <span class="order-total-num">{{total[index].totalNum}}</span> 
             </span>
           </div>

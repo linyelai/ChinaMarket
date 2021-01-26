@@ -170,7 +170,7 @@ export default {
         .then(res => {
           const val = {
             categoryId: 0,
-            categoryName: "全部"
+            categoryName: "All"
           };
           const cate = res.data.data;
           cate.unshift(val);
